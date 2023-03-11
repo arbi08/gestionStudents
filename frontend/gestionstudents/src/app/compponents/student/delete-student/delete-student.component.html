@@ -1,1 +1,20 @@
-<p>delete-student works!</p>
+<div class="center-content">
+    <div class="row width-style">
+        <div class="col s12 m6">
+          <div class="card blue-grey">
+            <div class="card-content white-text">
+              <span class="card-title">Delete student/{{student.id}}</span>
+                <div class="row">
+                    <div class="col">Name : {{student.firstname+" "+student.lastname}}</div>
+                </div>
+            </div>
+            <div class="card-action">
+                <div class="col d-flex justify-content-end">
+                    <a class="waves-effect waves-light btn bg-light" routerLink="/">return</a>
+                    <button type="submit" (click)="OnDelete()" class="waves-effect waves-light btn red mx-3">remove</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

@@ -30,6 +30,7 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSlideToggleModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

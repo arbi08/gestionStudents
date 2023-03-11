@@ -1,32 +1,42 @@
 <div class="container m-5">
-    <div class="row">
-        <form class="col s12" (ngSubmit)="OnAdd()" #etudiantForm="ngForm">
+    <div class="row">            
+        <form class="col s12" (ngSubmit)="OnAdd()" [formGroup]="studentForm">
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate" name="firstname" [(ngModel)]="student.firstname">
+                    <input id="last_name" type="text" class="validate" name="firstname" formControlName="firstname">
                     <label for="last_name">First Name</label>
+                    <!-- <div *ngIf="studentForm.get('firstname').invalid && (studentForm.get('name').dirty || studentForm.get('name').touched)">
+                        <div *ngIf="studentForm.get('firstname').errors.required">Name is required</div>
+                    </div> -->
                 </div>
                 <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate" name="lastname" [(ngModel)]="student.lastname">
+                    <input id="last_name" type="text" class="validate" name="lastname" formControlName="lastname">
                     <label for="last_name">Last Name</label>
+                    <!-- <div *ngIf="studentForm.get('lastname').invalid && (studentForm.get('name').dirty || studentForm.get('name').touched)">
+                        <div *ngIf="studentForm.get('lastname').errors.required">Name is required</div>
+                      </div> -->
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" class="validate" name="email" [(ngModel)]="student.email">
+                    <input id="email" type="email" class="validate" name="email" formControlName="email">
                     <label for="email">Email</label>
+                    <!-- <div *ngIf="studentForm.get('email')?.invalid && (studentForm.get('email')?.dirty || studentForm.get('email')?.touched)">
+                         <div *ngIf="studentForm.get('email')?.errors.required">Email is required</div>
+                        <div *ngIf="studentForm.get('email')?.errors.email">Email must be a valid email address</div>
+                    </div> -->
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="date" type="number" class="datepicker" class="validate" name="Datebirthday" [(ngModel)]="student.Datebirthday">
+                    <input id="date" type="number" class="datepicker" class="validate" name="Datebirthday" formControlName="Datebirthday">
                     <label for="date">Age</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col d-flex justify-content-end">
                     <a class="waves-effect waves-light btn light" routerLink="/">return</a>
-                    <button type="submit" class="waves-effect waves-light btn green mx-3">save</button>
+                    <button type="submit" class="waves-effect waves-light btn green mx-3" [disabled]="studentForm.invalid">save</button>
                 </div>
             </div>
         </form>

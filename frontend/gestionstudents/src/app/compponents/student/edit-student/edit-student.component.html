@@ -1,34 +1,35 @@
 <div class="container m-5">
     <div class="row">
-        <form class="col s12" (ngSubmit)="OnEdit()" #etudiantForm="ngForm">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate" name="firstname" [(ngModel)]="student.firstname">
-                    <label for="last_name">First Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate" name="lastname" [(ngModel)]="student.lastname">
-                    <label for="last_name">Last Name</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="email" type="email" class="validate" name="email" [(ngModel)]="student.email">
-                    <label for="email">Email</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="date" type="number" class="datepicker" class="validate" name="Datebirthday" [(ngModel)]="student.Datebirthday">
-                    <label for="date">Age</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col d-flex justify-content-end">
-                    <a class="waves-effect waves-light btn light" routerLink="/">return</a>
-                    <button type="submit" class="waves-effect waves-light btn green mx-3">save</button>
-                </div>
-            </div>
-        </form>
+      <form class="col s12" (ngSubmit)="OnEdit()" #etudiantForm="ngForm">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate" name="firstname" [(ngModel)]="student.firstname" required>
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate" name="lastname" [(ngModel)]="student.lastname" required>
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate" name="email" [(ngModel)]="student.email" required>
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="date" type="number" class="datepicker validate" name="Datebirthday" [(ngModel)]="student.Datebirthday" required>
+            <label for="date">Age</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-end">
+            <a class="waves-effect waves-light btn light" routerLink="/">Return</a>
+            <button type="submit" class="waves-effect waves-light btn green mx-3">Save</button>
+          </div>
+        </div>
+      </form>
     </div>
-</div>
+  </div>
+  

@@ -5,15 +5,16 @@ import { PagenotfoundComponent } from './compponents/student/pagenotfound/pageno
 import { AddStudentComponent } from './compponents/student/add-student/add-student.component';
 import { EditStudentComponent } from './compponents/student/edit-student/edit-student.component';
 import { DetaitStudentComponent } from './compponents/student/detait-student/detait-student.component';
+import { DeleteStudentComponent } from './compponents/student/delete-student/delete-student.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'students', pathMatch: 'full' },
   { path: 'students', children: [
     { path: '', component:  GetallStudentComponent},
-    { path: ':id/detait', component:  DetaitStudentComponent},
+    { path: ':id/detail', component:  DetaitStudentComponent},
     { path: 'add', component:  AddStudentComponent},
     { path: ':id/edit', component:  EditStudentComponent},
-    { path: ':id/delete', component:  DetaitStudentComponent},
+    { path: ':id/delete', component:  DeleteStudentComponent},
     { path: '**', component: PagenotfoundComponent }, 
   ]},
 ];
